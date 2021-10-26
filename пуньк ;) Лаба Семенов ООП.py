@@ -3,8 +3,10 @@
 class Cars():
     def __init__(self):
         self.lst = []
-        
-        
+     
+      
+
+            
     def add(self):
         vvod = ''
         while vvod != "стоп":
@@ -17,6 +19,7 @@ class Cars():
                 if vvod != 'стоп':
                     self.lst.append(avt)
         return True
+            
           
           
     def edit(self):
@@ -34,7 +37,7 @@ class Cars():
             if ch == 0:
                 return True
             
-            print("Введите какой параментр хотите изменить[цвет, объем двигателя, производитель]")
+            print("Введите какой параментр хотите изменить[цвет, объем двигателя, производитель, фары]")
             vvod = input()
             if ch == 0:
                 return True
@@ -53,6 +56,17 @@ class Cars():
                 print("Введите замену производителя")
                 a = input()
                 self.lst[ch-1][2] = a
+               
+            elif vvod == 'Фары':
+                print("Выберите цифру, в каком состоянии должны находиться фары:")
+                print("1. Фары выключены")
+                print("2. Фары включены")
+                a = input()
+                if a==1:
+                    self.flashlight="выключены"
+                if a==2:
+                    self.flashlight="включены"
+                
                     
             else:
                 print("Введите корректное значение")
@@ -73,6 +87,8 @@ class Cars():
     def show_spisok(self):
         for i in range(len(self.lst)):
             print(' '.join(self.lst[i]))
+            print("Фары:", self.flashlight)
+           
 
 
 
